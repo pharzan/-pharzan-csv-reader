@@ -7,8 +7,7 @@ module.exports = async (options) => {
         console.log(e)
     })
     
-    console.log(options)
-    const lines = content.split("\r\n")
+    const lines = content.split(options.endingLineSeperator || "\r\n")
     const columns = lines.map(element => {
         return element.split(options.delimeter || ';')
     });
@@ -26,7 +25,7 @@ module.exports = async (options) => {
             let idx = 0;
             if(typeof col==='number') idx=col
             else if(options.hasHeaders) idx = headers.findIndex((c)=>c.trim().toLowerCase()===col.toLowerCase())
-            else  idx = content[0].findIndex((c)=>c.trim().toLowerCase()===col.toLowerCase())
+            else  idx = columns[0].findIndex((c)=>c.trim().toLowerCase()===col.toLowerCase())
 
             return columns.map(c=>isNumerical?parseFloat(c[idx]):c[idx])
         },
