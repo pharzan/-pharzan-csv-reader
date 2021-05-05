@@ -1,0 +1,11 @@
+{
+  "name": "csvread",
+  "version": "1.0.0",
+  "description": "a small package to read contents of csv to be able to process easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
