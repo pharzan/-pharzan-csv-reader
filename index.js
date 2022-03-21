@@ -37,6 +37,21 @@ module.exports = async (options) => {
                 lines : columns.length,
                 columns: columns[0].length
             }
+        },
+        getJson(){
+            /**
+             * This function converts csv to JSON Object
+             */
+            const obj = {}
+            console.log(columns)
+            columns.forEach((col,idx) => {
+                col.forEach((c,jdx)=>{
+                    console.log(headers[jdx],col[jdx])
+                    obj[idx]=headers[jdx]=col[jdx]
+                })
+                
+            });
+            return obj
         }
     }
 }
